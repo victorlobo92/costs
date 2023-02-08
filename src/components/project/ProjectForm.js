@@ -1,22 +1,26 @@
+import * as form from '../form/Form'
 import styles from './ProjectForm.module.css'
 
-export default function ProjectForm() {
+export default function ProjectForm({ btnText }) {
     return (
-        <form>
-            <div>
-                <input type="text" placeholder="Insira o nome do projeto" />
-            </div>
-            <div>
-                <input type="number" placeholder="Insira o orçamento total" />
-            </div>
-            <div>
-                <select name="category_id">
-                    <option disabled>Selecione a categoria</option>
-                </select>
-            </div>
-            <div>
-                <input type="submit" value="Criar projeto" />
-            </div>
+        <form className={styles.form}>
+            <form.Input
+                type="text"
+                text="Nome do projeto"
+                name="name"
+                placeholder="Insira o nome do projeto"
+            />
+            <form.Input
+                type="number"
+                text="Orçamento do projeto"
+                name="budgt"
+                placeholder="Insira o orçamento total"
+            />
+            <form.Select
+                name="category_id"
+                text="Selecione a categoria"
+            />
+            <form.SubmitButton text={btnText} />
         </form>
     )
 }
