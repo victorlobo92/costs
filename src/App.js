@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import * as page from './components/pages/Pages'
-import * as layout from './components/layouts/Layouts'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import * as layout from "./components/layouts/Layouts";
+import * as page from "./components/pages/Pages";
 
 function App() {
   return (

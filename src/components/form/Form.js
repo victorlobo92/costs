@@ -1,5 +1,5 @@
-import Input from './Input'
-import Select from './Select'
-import SubmitButton from './SubmitButton'
+import Input from "./Input";
+import Select from "./Select";
+import SubmitButton from "./SubmitButton";
 
-export { Input, Select, SubmitButton }
+export { Input, Select, SubmitButton };
