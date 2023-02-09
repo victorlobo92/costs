@@ -86,6 +86,7 @@
       {
         "allowExpressions": true
       }
-    ]
+    ],
+    "react/prop-types": 1
   }
 }
