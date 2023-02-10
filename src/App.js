@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import * as layout from "./components/layouts/Layouts";
+import { Navbar, Container, Footer } from "./components/layouts/Layouts";
 import * as page from "./components/pages/Pages";
 
 function App() {
   return (
     <Router>
-      <layout.Navbar />
-      <layout.Container customClass="min-height">
+      <Navbar />
+      <Container customClass="min-height">
         <Routes>
           <Route exact path="/" element={<page.Home />} />
           <Route exact path="/projects" element={<page.Projects />} />
@@ -15,8 +15,8 @@ function App() {
           <Route exact path="/contact" element={<page.Contact />} />
           <Route exact path="/new-project" element={<page.NewProject />} />
         </Routes>
-      </layout.Container>
-      <layout.Footer />
+      </Container>
+      <Footer />
     </Router>
   );
 }
