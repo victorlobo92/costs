@@ -7,8 +7,21 @@
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 1200,
+      "services": [
+        {
+          "name": "Serviço inicial",
+          "cost": "1000",
+          "description": "Serviço inicial para teste",
+          "id": "00e3b3c3-f58f-422f-b71f-260f620fe1cb"
+        },
+        {
+          "name": "Outro serviço",
+          "cost": "200",
+          "description": "Outro teste",
+          "id": "d0182c9a-04d7-45bc-9eb2-8718515ea3fe"
+        }
+      ],
       "id": 1
     }
   ],

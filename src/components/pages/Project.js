@@ -4,14 +4,14 @@ import { parse, v4 as uuidv4 } from "uuid";
 
 import { Container, Loading, Message } from "../layouts/Layouts";
 import ProjectForm from "../project/ProjectForm";
-import ServiceForm from "../services/ServiceForm";
+import { ServiceCard, ServiceForm } from "../services/Services";
 import styles from "./Project.module.css";
 
 export default function Project() {
   const { id } = useParams();
-  console.log(id);
 
   const [project, setProject] = useState([]);
+  const [services, setServices] = useState([]);
   const [showProjectForm, setShowProjectForm] = useState(false);
   const [showServiceForm, setShowServiceForm] = useState(false);
   const [message, setMessage] = useState();
@@ -26,8 +26,8 @@ export default function Project() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
         setProject(data);
+        setServices(data.services);
       })
       .catch((err) => console.log(err));
   }, [id]);
@@ -94,9 +94,13 @@ export default function Project() {
       body: JSON.stringify(project),
     })
       .then((resp) => resp.json())
-      .then((data) => {})
+      .then((data) => {
+        setShowServiceForm(false);
+      })
       .catch((err) => console.log(err));
   }
+
+  function removeService() {}
 
   return (
     <>
@@ -156,7 +160,18 @@ export default function Project() {
             </div>
             <h2>Serviços</h2>
             <Container customClass="start">
-              <p>Itens de serviços</p>
+              {services.length > 0 &&
+                services.map((service) => (
+                  <ServiceCard
+                    id={service.id}
+                    name={service.name}
+                    cost={service.cost}
+                    description={service.description}
+                    key={service.id}
+                    handleRemove={removeService}
+                  />
+                ))}
+              {services.length === 0 && <p>Não há serviços cadastrados</p>}
             </Container>
           </Container>
         </div>
