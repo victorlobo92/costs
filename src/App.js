@@ -14,6 +14,7 @@ function App() {
           <Route exact path="/company" element={<page.Company />} />
           <Route exact path="/contact" element={<page.Contact />} />
           <Route exact path="/new-project" element={<page.NewProject />} />
+          <Route exact path="/project/:id" element={<page.Project />} />
         </Routes>
       </Container>
       <Footer />
